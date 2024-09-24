@@ -7,5 +7,13 @@ int main() {
     std::cout << s.getAge() << std::endl;
     s.printInfo();
 
+    oop_practice::Student::Course c("Math 101", 2004);
+
+    s.enroll(c);
+
+    s.printCourses();
+
+    std::cout<<oop_practice::compareGrades(s, s);
+
     return 0;
 }

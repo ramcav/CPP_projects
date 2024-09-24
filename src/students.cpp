@@ -46,7 +46,11 @@ namespace oop_practice {
         return this->totalStudents;
     }
 
-    bool compareGrade(const Student& a, const Student& b) {
+    std::vector<Student::Course> Student::getCourses() const {
+        return this->courses;
+    }
+
+    bool compareGrades(const Student& a, const Student& b) {
         return a.getGrade() > b.getGrade();
     };
 
@@ -83,7 +87,7 @@ namespace oop_practice {
     }
 
     // Print info
-    const int Student::printInfo() {
+    int Student::printInfo() const {
 
         std::cout<<"PRINTING STUDENT SUMMARY"<<std::endl;
         std::cout<<"name: "<<getName()<<std::endl;
@@ -103,6 +107,27 @@ namespace oop_practice {
         this->courses.push_back(course);
         return 0;
     }
+
+    int Student::printCourses() const {
+
+        // Iterate over the courses and print each course's details
+
+        for (const auto& course : getCourses()) {
+            std::cout << "- Course Name: " << course.courseName << std::endl;
+            std::cout << "  Year: " << course.year << std::endl;
+        }
+
+        return 0;
+    };
+
+    Student::Course::Course(std::string in_courseName, int in_year) {
+        this->courseName = in_courseName;
+        this->year = in_year;
+    };
+
+    bool Student::Course::operator==(const Course& other) const {
+        return courseName == other.courseName && year == other.year;
+    };
 }
 
 namespace detail {
