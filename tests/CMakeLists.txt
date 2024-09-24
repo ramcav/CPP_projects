@@ -14,17 +14,17 @@ include(GoogleTest)
 include_directories(${CMAKE_SOURCE_DIR}/src)
 
 # Add the doubly_linked_list library
-add_library(doubly_linked_list_lib SHARED ../src/doubly_linked_list.cpp)
+add_library(students_lib SHARED ../src/students.cpp)
 
 # Add the test executable
-add_executable(test_doubly_linked_list test_doubly_linked_list.cpp)
+add_executable(test_students tests.cpp)
 
 # Link the test executable with the doubly_linked_list library and GTest
 target_link_libraries(
-  test_doubly_linked_list
-  doubly_linked_list_lib
+  test_students
+  students_lib
   GTest::gtest_main
 )
 
 # Add the test to the test suite
-gtest_discover_tests(test_doubly_linked_list)
+gtest_discover_tests(test_students)
