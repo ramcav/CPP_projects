@@ -1,5 +1,6 @@
 #include <iostream>    // For printing output
 #include "students.h"  // Include your header file
+#include "person.h"
 
 int main() {
     // Create a Student object
@@ -14,6 +15,13 @@ int main() {
     s.printCourses();
 
     std::cout<<oop_practice::compareGrades(s, s);
+
+    // Person related logic
+
+    oop_practice2::Person p1{"Alice", 30, {"reading", "hiking"}};
+    oop_practice2::Person p2 = p1; // Compiler-generated copy constructor
+    p2.name = "Bob";
+    p2.hobbies.push_back("swimming");
 
     return 0;
 }

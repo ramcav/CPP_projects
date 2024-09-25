@@ -39,3 +39,30 @@ This is the documentation for the classes and functions in the `detail` namespac
 .. doxygennamespace:: detail
    :project: OOP First Steps
    :members:
+
+OOP_PRACTICE_3 Namespace
+---------
+
+This is the documentation for the classes and functions in the `oop_practice3` namespace.
+
+.. doxygennamespace:: oop_practice3
+   :project: OOP First Steps
+   :members:
+
+DynamicArray Documentation
+======================
+
+This section contains the documentation for the DynamicArray class.
+
+.. doxygenclass:: oop_practice3::DynamicArray
+   :project: OOP First Steps
+   :members:
+
+DynamicArrayVector Documentation
+======================
+
+This section contains the documentation for the DynamicArrayVector class.
+
+.. doxygenclass:: oop_practice3::DynamicArrayVector
+   :project: OOP First Steps
+   :members:

@@ -2,6 +2,7 @@
 #include <list>
 #include <string>
 #include "students.h"
+#include "dyn_array.h"
 #include <vector>
 
 namespace oop_tests {
