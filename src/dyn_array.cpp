@@ -78,20 +78,14 @@ namespace oop_practice3 {
 
     // Move Assignment Operator
     DynamicArray& DynamicArray::operator=(DynamicArray&& other) noexcept {
-        if (this != &other) {
-            // Free existing resource
-            delete[] head;  // Free current object's memory
-
-            // Transfer ownership of data
-            head = other.head;
-            size = other.size;
-            // elements = std::move(other.elements);
-
-            // Leave 'other' in a valid state
-            other.head = nullptr;
-            other.size = 0;
-        }
-        return *this;
+    if (this != &other) {
+        delete[] head;  // Free current object's memory
+        head = other.head;
+        size = other.size;
+        other.head = nullptr;  // Avoid double deletion
+        other.size = 0;
+    }
+    return *this;
     }
 
     // Remember: the return type int& returns a reference to an int
@@ -124,11 +118,6 @@ namespace oop_practice3 {
         // Append elements from rhs to result
         for (int i = 0; i < rhs.getSize(); i++) {
             result[i + lhs.getSize()] = rhs[i];
-        }
-
-        // Update the head array to reflect the concatenation
-        for (int i = 0; i < result.getSize(); i++) {
-            result.head[i] = result[i];  // Ensure head is synchronized with elements
         }
 
         return result;
