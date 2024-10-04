@@ -13,7 +13,7 @@ configure_file(${DOXYFILE_IN} ${DOXYFILE_OUT} @ONLY)
 file(MAKE_DIRECTORY ${DOXYGEN_OUTPUT_DIR})
 
 # Only regenerate Doxygen when some public headers change
-get_target_property(PUBLIC_HEADER_DIR students INTERFACE_INCLUDE_DIRECTORIES)
+get_target_property(PUBLIC_HEADER_DIR expression INTERFACE_INCLUDE_DIRECTORIES)
 file(GLOB_RECURSE PUBLIC_HEADERS ${PUBLIC_HEADER_DIR}/*.h)
 
 add_custom_command(OUTPUT ${DOXYGEN_INDEX_FILE}

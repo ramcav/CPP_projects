@@ -1,68 +1,41 @@
-OOP First Steps documentation
+Inheritance and Polymorphism
 ===================================
 
 Welcome to the landing page!
 
-OOP_PRACTICE Namespace
+Inheritance Namespace
 ---------
 
-This is the documentation for the classes and functions in the `oop_practice` namespace.
+This is the documentation for the classes and functions in the `inheritance` namespace.
 
-.. doxygennamespace:: oop_practice
-   :project: OOP First Steps
+.. doxygennamespace:: inheritance
+   :project: Inheritance and Polymorphism
    :members:
 
-Students Documentation
+Expression Documentation
 ======================
 
-This section contains the documentation for the Student class.
+This section contains the documentation for the Expression class.
 
-.. doxygenclass:: oop_practice::Student
-   :project: OOP First Steps
+.. doxygenclass:: inheritance::Expression
+   :project: Inheritance and Polymorphism
    :members:
 
-Courses Documentation
+Constant Documentation
 ======================
 
-This section contains the documentation for the Course class.
+This section contains the documentation for the Constant class.
 
-.. doxygenclass:: oop_practice::Student::Course
-   :project: OOP First Steps
+.. doxygenclass:: inheritance::Constant
+   :project: Inheritance and Polymorphism
    :members:
 
 
-Detail Namespace
+BinaryPlus Class
 ---------
 
-This is the documentation for the classes and functions in the `detail` namespace.
+This is the documentation for the BinaryPlus class.
 
-.. doxygennamespace:: detail
-   :project: OOP First Steps
-   :members:
-
-OOP_PRACTICE_3 Namespace
----------
-
-This is the documentation for the classes and functions in the `oop_practice3` namespace.
-
-.. doxygennamespace:: oop_practice3
-   :project: OOP First Steps
-   :members:
-
-DynamicArray Documentation
-======================
-
-This section contains the documentation for the DynamicArray class.
-
-.. doxygenclass:: oop_practice3::DynamicArray
-   :project: OOP First Steps
-   :members:
-
-DynamicArrayVector Documentation
-======================
-
-This section contains the documentation for the DynamicArrayVector class.
-
-.. doxygenclass:: oop_practice3::DynamicArrayVector
-   :project: OOP First Steps
+.. doxygenclass:: inheritance::BinaryPlus
+   :project: Inheritance and Polymorphism
    :members:

@@ -8,7 +8,7 @@ import os
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = "OOP First Steps"
+project = "Inheritance and Polymorphism"
 copyright = "2024, ramcav"
 author = "Ricardo"
 
@@ -29,5 +29,5 @@ html_theme = "alabaster"
 html_static_path = ["_static"]
 
 breathe_projects = {
-    "OOP First Steps": os.path.join(os.path.dirname(__file__), "../../build/docs/doxygen/xml")
+    "Inheritance and Polymorphism": os.path.join(os.path.dirname(__file__), "../../build/docs/doxygen/xml")
 }

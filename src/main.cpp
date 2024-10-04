@@ -1,27 +1,44 @@
-#include <iostream>    // For printing output
-#include "students.h"  // Include your header file
-#include "person.h"
+#include "expression.h"
+#include <iostream>
+#include <cassert>
+#include <vector>
 
 int main() {
-    // Create a Student object
-    oop_practice::Student s("Alice", 20, 8.0);
-    std::cout << s.getAge() << std::endl;
-    s.printInfo();
+    // Inheritance in action.
+    //Constant and BinaryPlus are both children of Expression
+    // inheritance::Constant c1(1);
+    // inheritance::Constant c2(2);
+    // inheritance::Constant c3(3);
+    // inheritance::BinaryPlus bp(c1, c2);
+    // inheritance::BinaryPlus bp2(bp, c3);
+    // std::string c1plusc2plusc3 = bp2.toString();
+    // double result = bp2.evaluate();
+    // std::cout << c1plusc2plusc3 << " = " << result << std::endl; 
+    // assert(result == 6);
 
-    oop_practice::Student::Course c("Math 101", 2004);
+    // // Polymorphism in action
 
-    s.enroll(c);
+    // std::vector<const inheritance::Expression*> expressions = {&c1, &c2, &c3, &bp, &bp2};
+    // for (const inheritance::Expression* e_ptr : expressions) {
 
-    s.printCourses();
+    //     const inheritance::Expression& e = *e_ptr;
 
-    std::cout<<oop_practice::compareGrades(s, s);
+    //     inheritance::printExpression(e);
 
-    // Person related logic
+    // }
 
-    oop_practice2::Person p1{"Alice", 30, {"reading", "hiking"}};
-    oop_practice2::Person p2 = p1; // Compiler-generated copy constructor
-    p2.name = "Bob";
-    p2.hobbies.push_back("swimming");
+    inheritance::Constant c1(1);
+    inheritance::Constant c2(2);
+
+    std::cout<<"EVALUATE:" <<c1.evaluate()<<std::endl;
+    std::cout<<"TO-STRING:" <<c2.toString()<<std::endl;
+
+    inheritance::BinaryPlus bp(c1, c2);
+    std::string c1plusc2 = static_cast<std::string>(bp);
+
+    std::cout << c1plusc2 << std::endl;
+
+    inheritance::switchValue(bp, 2);
 
     return 0;
 }
