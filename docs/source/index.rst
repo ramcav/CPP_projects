@@ -1,41 +1,22 @@
-Inheritance and Polymorphism
+I/O Stream
 ===================================
 
 Welcome to the landing page!
 
-Inheritance Namespace
+I/O Stream Namespace
 ---------
 
-This is the documentation for the classes and functions in the `inheritance` namespace.
+This is the documentation for the classes and functions in the `homework` namespace.
 
-.. doxygennamespace:: inheritance
-   :project: Inheritance and Polymorphism
+.. doxygennamespace:: homework
+   :project: I/O Stream
    :members:
 
-Expression Documentation
+SPLIT Documentation
 ======================
 
-This section contains the documentation for the Expression class.
+This section contains the documentation for the SPLIT class.
 
-.. doxygenclass:: inheritance::Expression
-   :project: Inheritance and Polymorphism
-   :members:
-
-Constant Documentation
-======================
-
-This section contains the documentation for the Constant class.
-
-.. doxygenclass:: inheritance::Constant
-   :project: Inheritance and Polymorphism
-   :members:
-
-
-BinaryPlus Class
----------
-
-This is the documentation for the BinaryPlus class.
-
-.. doxygenclass:: inheritance::BinaryPlus
-   :project: Inheritance and Polymorphism
+.. doxygenclass:: homework::split
+   :project: I/O Stream
    :members:

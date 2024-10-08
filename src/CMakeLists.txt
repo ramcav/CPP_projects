@@ -1,6 +1,6 @@
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
-add_library(expression OBJECT expression.cpp)
-link_libraries(expression)
+add_library(split OBJECT split.cpp)
+link_libraries(split)
 
 add_executable(main main.cpp)
