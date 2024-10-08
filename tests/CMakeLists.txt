@@ -10,21 +10,21 @@ FetchContent_MakeAvailable(googletest)
 
 include(GoogleTest)
 
-# Add src as an include so that we can include the header files in the tests
-include_directories(${CMAKE_SOURCE_DIR}/src)
+# Add the include directory for header files (do NOT add it as a subdirectory)
+include_directories(${CMAKE_SOURCE_DIR}/include)
 
-# Add the doubly_linked_list library
-add_library(doubly_linked_list_lib SHARED ../src/doubly_linked_list.cpp)
+# Add the library for expression
+add_library(lib SHARED ${CMAKE_SOURCE_DIR}/src/split.cpp)
 
-# Add the test executable
-add_executable(test_doubly_linked_list test_doubly_linked_list.cpp)
+# Add the test executables
+add_executable(test_split ${CMAKE_SOURCE_DIR}/tests/test.cpp)
 
-# Link the test executable with the doubly_linked_list library and GTest
+# Link the test executables with the corresponding libraries and GTest
 target_link_libraries(
-  test_doubly_linked_list
-  doubly_linked_list_lib
+  test_split
+  lib
   GTest::gtest_main
 )
 
-# Add the test to the test suite
-gtest_discover_tests(test_doubly_linked_list)
+# Discover the tests in both test executables
+gtest_discover_tests(test_split)
