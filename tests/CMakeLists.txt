@@ -14,17 +14,17 @@ include(GoogleTest)
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
 # Add the library for expression
-add_library(lib SHARED ${CMAKE_SOURCE_DIR}/src/split.cpp)
+add_library(lib SHARED ${CMAKE_SOURCE_DIR}/src/smart.cpp)
 
 # Add the test executables
 add_executable(test_split ${CMAKE_SOURCE_DIR}/tests/test.cpp)
 
 # Link the test executables with the corresponding libraries and GTest
 target_link_libraries(
-  test_split
+  test_smart
   lib
   GTest::gtest_main
 )
 
 # Discover the tests in both test executables
-gtest_discover_tests(test_split)
+gtest_discover_tests(test_smart)
