@@ -13,18 +13,18 @@ include(GoogleTest)
 # Add the include directory for header files (do NOT add it as a subdirectory)
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
-# Add the library for expression
+# Add the libraries for expression
 add_library(lib SHARED ${CMAKE_SOURCE_DIR}/src/split.cpp)
 
 # Add the test executables
-add_executable(test_split ${CMAKE_SOURCE_DIR}/tests/test.cpp)
+add_executable(test_homework ${CMAKE_SOURCE_DIR}/tests/test.cpp)
 
-# Link the test executables with the corresponding libraries and GTest
+# Link the test executable with the corresponding libraries and GTest
 target_link_libraries(
-  test_split
+  test_homework
   lib
   GTest::gtest_main
 )
 
 # Discover the tests in both test executables
-gtest_discover_tests(test_split)
+gtest_discover_tests(test_homework)

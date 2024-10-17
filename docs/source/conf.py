@@ -8,7 +8,7 @@ import os
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = "I/O Stream"
+project = "Homework Session 13 | 14 | 15"
 copyright = "2024, ramcav"
 author = "Ricardo"
 
@@ -29,5 +29,5 @@ html_theme = "alabaster"
 html_static_path = ["_static"]
 
 breathe_projects = {
-    "I/O Stream": os.path.join(os.path.dirname(__file__), "../../build/docs/doxygen/xml")
+    "Homework Session 13 | 14 | 15": os.path.join(os.path.dirname(__file__), "../../build/docs/doxygen/xml")
 }
