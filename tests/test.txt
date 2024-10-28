@@ -1,0 +1,5 @@
+Test: Zipf Law 
+
+This is a test of the Zipf Law. The Zipf Law is an empirical law that states that the frequency of a word is inversely proportional to its rank. This means that the most frequent word will appear twice as often as the second most frequent word, three times as often as the third most frequent word, and so on. The Zipf Law has been observed in many natural languages, as well as in other areas such as the distribution of city sizes and the popularity of websites.
+
+To test the Zipf Law, we will generate a random text file with a large number of words, and then count the frequency of each word. We will then plot the frequency of each word against its rank, and see if the resulting curve follows the Zipf Law.

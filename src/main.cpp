@@ -1,24 +1,43 @@
 #include <zipf.h>
+#include <zipf_algo.h>
+#include <iostream>
+#include <vector>
+#include <string>
 
-using namespace homework;
-int main() {
-    auto x = readBook("mobby.txt");
-    std::map<std::string, int> freqMap = computeWordFrequency(x);
-    int uniqueWords = countUniqueWords(x);
-    std::cout << "UNIQUE WORDS MOBBY DICK: " << uniqueWords << std::endl;
+using namespace zipf_law;
+
+void processBookWithMap(const std::string &filename, const std::string &outputPrefix) {
+    auto text = readBook(filename);
+    std::map<std::string, int> freqMap = computeWordFrequency(text);
+    int uniqueWords = countUniqueWords(text);
+    std::cout << "UNIQUE WORDS " << filename << ": " << uniqueWords << std::endl;
+
     std::multimap<int, std::string, std::greater<>> sortedFreqs = sortFrequencies(freqMap);
     hapax(sortedFreqs);
-    writeRanksToFile(sortedFreqs, "mobby");
-    plotLogLog("mobby_ranks.txt");
+    writeRanksToFile(sortedFreqs, outputPrefix);
+    plotLogLog(outputPrefix + "_ranks.txt");
+}
 
-    // For Don Quijote
-    auto y = readBook("quijote.txt");
-    std::map<std::string, int> freqMapY = computeWordFrequency(y);
-    int uniqueWordsY = countUniqueWords(y);
-    std::cout << "UNIQUE WORDS QUIJOTE: " << uniqueWordsY << std::endl;
-    std::multimap<int, std::string, std::greater<>> sortedFreqsY = sortFrequencies(freqMapY);
-    writeRanksToFile(sortedFreqsY, "quijote");
-    plotLogLog("quijote_ranks.txt");
+void processBookWithAlgo(const std::string &filename, const std::string &outputPrefix) {
+    auto text = readBook(filename);
+    std::vector<std::pair<std::string, int>> wordFreq = computeWordFrequencyAlgo(text);
+    std::vector<std::pair<std::string, int>> sortedFreq = sortWordFrequencyAlgo(wordFreq);
+    
+    int uniqueWordsAlgo = countUniqueWordsAlgo(text);
+    std::cout << "UNIQUE WORDS " << filename << " WITH ALGORITHM: " << uniqueWordsAlgo << std::endl;
 
-    // The VS plot is plotted using python
+    hapaxAlgo(wordFreq);
+    writeRanksToFileAlgo(sortedFreq, outputPrefix + "_algo");
+}
+
+int main() {
+    // Process Moby Dick using both methods
+    processBookWithMap("mobby.txt", "mobby");
+    processBookWithAlgo("mobby.txt", "mobby");
+
+    // Process Don Quijote using both methods
+    processBookWithMap("quijote.txt", "quijote");
+    processBookWithAlgo("quijote.txt", "quijote");
+
+    // The Don Quijote VS Moby Dick comparison plot will be handled by Python
 }

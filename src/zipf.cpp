@@ -1,6 +1,6 @@
 #include <zipf.h>
 
-namespace homework {
+namespace zipf_law {
     std::vector<char> readBook(std::string fileName) {
 
         std::vector<char> chars;
@@ -142,6 +142,7 @@ namespace homework {
             hapax_words.push_back(it->second);
             std::cout << it->second << std::endl;
         }
+        
 
         return hapax_words;
     }
