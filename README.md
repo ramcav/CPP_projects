@@ -38,7 +38,7 @@ You can now run the executable:
     make run_plot_script_vs
 ```
 
-Or, ru
+Or...
 
 You can now run the tests:
 
