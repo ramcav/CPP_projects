@@ -34,6 +34,8 @@ You can now run the executable:
 
 ```bash
     ./bin/zipf
+    make run_plot_script
+    make run_plot_script_vs
 ```
 
 Or, ru
