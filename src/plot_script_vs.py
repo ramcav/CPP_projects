@@ -13,3 +13,4 @@ plt.title("Word Frequency Distribution on Log-Log Scale")
 plt.legend()
 
 plt.savefig("img/combined_plot.png")
+plt.show()
